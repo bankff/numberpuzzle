@@ -4,8 +4,14 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    time: 1 * 60 * 1000,
+  },
+  mutations: {
+    setTime(state, payload) {
+      state.time = payload;
+    },
+  },
   actions: {},
   modules: {},
 });
