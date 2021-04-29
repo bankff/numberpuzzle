@@ -13,7 +13,7 @@ export default {
   name: "card",
   props: {
     number: {
-      type: String,
+      type: Number,
       required: true,
     },
     color: {

@@ -5,14 +5,21 @@
         <v-card-title
           class="font-weight-black justify-center ma-2"
           style="font-size: 7vh"
-          >{{parseInt(number/100)}}</v-card-title
+          >{{parseInt(number/1000)}}</v-card-title
         >
       </v-card>
       <v-card width="500" height="80" outlined>
         <v-card-title
           class="font-weight-black justify-center ma-2"
           style="font-size: 7vh"
-          >{{parseInt((number%100)/10)}}</v-card-title
+          >{{parseInt((number/100)%10)}}</v-card-title
+        >
+      </v-card>
+      <v-card width="500" height="80" outlined>
+        <v-card-title
+          class="font-weight-black justify-center ma-2"
+          style="font-size: 7vh"
+          >{{parseInt((number/10)%10)}}</v-card-title
         >
       </v-card>
       <v-card width="500" height="80" outlined>
@@ -31,6 +38,9 @@
       <v-btn x-large color="success" class="ma-2 white--text" v-on:click="randomNumber(100,999)">
         สุ่มเลข 3 หลัก
       </v-btn>
+            <v-btn x-large color="warning" class="ma-2 white--text" v-on:click="randomNumber(1000,9999)">
+        สุ่มเลข 4 หลัก
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -48,6 +58,7 @@ export default {
     randomNumber:async function(min,max){
       try {
         this.number = parseInt(Math.random()* (max - min) + min);
+        console.log( this.number);
         this.replyActionRandom();
       } catch (error) {
         console.log();
